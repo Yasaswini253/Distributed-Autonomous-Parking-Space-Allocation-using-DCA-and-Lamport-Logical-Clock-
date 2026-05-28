@@ -108,65 +108,167 @@ The complete workflow of the system includes:
 
 ## Software and Simulation Environment
 
-The proposed Distributed Autonomous Parking Space Allocation System was developed and tested using multiple software tools and distributed computing concepts to simulate real-time parking coordination among autonomous nodes.
+The proposed Distributed Autonomous Parking Space Allocation System was designed and implemented using advanced distributed computing concepts and virtualization-based simulation techniques. The software environment was developed to simulate a real-time decentralized parking infrastructure where multiple autonomous parking nodes communicate and coordinate without relying on a centralized controller.
+
+---
 
 ### GET Virtual Machine (GETVM)
 
-A major software platform used in this project is **GET Virtual Machine (GETVM)**. GETVM was used to create a simulated distributed environment where multiple parking nodes operate independently and communicate with each other in real time.
+The primary software platform used in this project is **GET Virtual Machine (GETVM)**. GETVM was utilized to create a distributed simulation environment capable of executing multiple virtual parking nodes simultaneously.
 
 The virtual machine environment enabled:
 
-* Distributed node execution
-* Inter-node communication testing
-* Simulation of parking request handling
-* Validation of Distributed Coordination Algorithm (DCA)
-* Synchronization using Lamport Logical Clock
-* Conflict-free parking slot allocation
+* Distributed node deployment
+* Autonomous inter-node communication
+* Real-time parking slot synchronization
+* Distributed parking allocation testing
+* Event ordering and timestamp synchronization
+* Multi-node coordination and fault analysis
 
-Using GETVM, multiple virtual parking nodes were executed simultaneously to replicate a real-world distributed smart parking infrastructure. The environment helped in analyzing:
+Using GETVM, the proposed system successfully simulated a smart parking network in which independent parking nodes dynamically communicate and allocate parking spaces in real time. The virtualized environment provided flexibility for testing concurrent parking requests, node failures, synchronization conflicts, and distributed coordination mechanisms without requiring large-scale physical hardware deployment.
+
+The simulation platform was also used to evaluate:
 
 * Communication efficiency
-* Allocation delay
-* Request synchronization
-* Distributed coordination performance
-* Scalability of the proposed architecture
-
-The virtualized setup also provided flexibility for testing node failures, simultaneous parking requests, and dynamic parking slot updates without requiring large-scale physical hardware deployment.
-
----
-
-### Programming Environment
-
-The project logic and communication modules were implemented using:
-
-* **Python** – for distributed node communication, parking allocation logic, and synchronization mechanisms
-* **Linux-based Environment** – for executing distributed node simulations inside GETVM
+* Distributed synchronization
+* Resource allocation fairness
+* Parking request handling
+* System scalability
+* Fault tolerance behavior
 
 ---
 
-### Distributed Computing Concepts Used
+## Distributed Algorithms Implemented
 
-The project integrates several distributed system concepts including:
-
-* Distributed Coordination Algorithm (DCA)
-* Lamport Logical Clock
-* Distributed Event Ordering
-* Autonomous Node Communication
-* Decentralized Resource Allocation
-
-These concepts enabled the implementation of a scalable and fault-tolerant parking allocation system suitable for smart city applications.
+The project integrates several advanced distributed computing algorithms to ensure reliable, synchronized, and conflict-free parking allocation across distributed parking nodes.
 
 ---
 
-### Hardware Integration
+### 1. Lamport’s Logical Clock
 
-The software environment was integrated with hardware-oriented simulation components such as:
+Lamport’s Logical Clock algorithm was implemented to maintain logical event ordering among distributed parking nodes.
 
-* Ultrasonic Sensors for vehicle detection
-* LED indicators for slot availability
-* Microcontroller-based node processing
+The algorithm was used for:
 
-The integration between software simulation and hardware logic allowed real-time monitoring and autonomous parking management operations.
+* Timestamp generation
+* Event synchronization
+* Ordering parking requests
+* Preventing request conflicts
+* Maintaining consistency across distributed nodes
+
+Logical clocks enabled the system to correctly sequence distributed events even in the absence of synchronized physical clocks.
+
+---
+
+### 2. Distributed Mutual Exclusion (Ricart–Agrawala Algorithm)
+
+The Ricart–Agrawala Distributed Mutual Exclusion algorithm was implemented to ensure that only one parking node accesses or allocates a shared parking resource at a given time.
+
+This algorithm provided:
+
+* Conflict-free parking allocation
+* Safe distributed resource access
+* Elimination of duplicate slot assignments
+* Coordinated distributed decision making
+
+The algorithm improved fairness and consistency in handling simultaneous parking requests from multiple distributed nodes.
+
+---
+
+### 3. Leader Election using Bully Algorithm
+
+The Bully Algorithm was implemented for dynamic leader election among distributed parking nodes.
+
+The elected leader node was responsible for:
+
+* Coordinating distributed operations
+* Monitoring active node availability
+* Managing recovery during node failures
+* Maintaining system stability
+
+The leader election mechanism improved fault tolerance and ensured uninterrupted distributed system operation.
+
+---
+
+### 4. Two-Phase Commit Protocol (2PC)
+
+The Two-Phase Commit (2PC) protocol was implemented to maintain distributed transaction consistency during parking allocation operations.
+
+The protocol ensured:
+
+* Reliable parking transaction confirmation
+* Consistent slot updates across nodes
+* Distributed agreement before final allocation
+* Failure recovery support
+
+This mechanism prevented inconsistent parking states and ensured reliable distributed synchronization.
+
+---
+
+### 5. Distributed Snapshot using Chandy–Lamport Algorithm
+
+The Chandy–Lamport Distributed Snapshot algorithm was used to capture the global state of the distributed parking system during execution.
+
+The algorithm enabled:
+
+* Global system state monitoring
+* Distributed checkpoint creation
+* Fault analysis and debugging
+* Performance evaluation of distributed operations
+
+This helped analyze the real-time behavior of distributed parking nodes without interrupting system execution.
+
+---
+
+## Programming Environment
+
+The software implementation was developed using:
+
+* Python
+* Linux-based distributed environment
+* GETVM virtualization platform
+
+Python was used for:
+
+* Distributed communication logic
+* Parking allocation algorithms
+* Synchronization mechanisms
+* Inter-node messaging
+* Real-time event handling
+
+---
+
+## Hardware Integration
+
+The software simulation environment was integrated with embedded hardware-oriented components including:
+
+* Ultrasonic Sensors
+* LED indicators
+* Microcontroller-based parking nodes
+
+The hardware integration enabled:
+
+* Real-time vehicle detection
+* Parking occupancy monitoring
+* Slot availability indication
+* Distributed parking status updates
+
+---
+
+## Advantages of the Software Architecture
+
+The implemented software environment provides:
+
+* Decentralized parking management
+* High scalability
+* Improved fault tolerance
+* Real-time synchronization
+* Distributed coordination
+* Conflict-free resource allocation
+* Reliable distributed communication
+
+The virtualization-based distributed simulation successfully demonstrated the effectiveness of distributed algorithms in solving real-time smart parking allocation challenges for future smart city applications.
+
 
 
 ## Features
